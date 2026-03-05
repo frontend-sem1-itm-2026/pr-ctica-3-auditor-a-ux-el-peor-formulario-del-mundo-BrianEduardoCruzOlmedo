@@ -1,96 +1,20 @@
-En este archivo debes **listar los problemas encontrados** en el formulario.
-
-Se recomienda clasificar los hallazgos usando las siguientes categorías:
-
-### Categorías sugeridas
-
-**UX (Experiencia de usuario)**  
-- claridad del flujo  
-- botones confusos  
-- acciones poco claras  
-
-**Accesibilidad**  
-- falta de labels  
-- bajo contraste  
-- problemas de navegación  
-
-**Validación**  
-- campos sin validación  
-- tipos incorrectos  
-- campos que deberían ser `required`  
-
-**Jerarquía visual / Layout**  
-- orden incorrecto  
-- agrupación deficiente  
-- mala organización de campos  
-
-**Responsive**  
-- problemas en pantalla móvil  
-- layout que se rompe  
-- elementos demasiado grandes o pequeños  
-
-**Contenido**  
-- textos confusos  
-- requisitos absurdos  
-- instrucciones poco claras  
-
----
-
-# 📊 Formato recomendado
-
-Puedes usar una tabla como esta:
-
-| # | Problema detectado | Categoría | Evidencia | ¿Por qué es un problema? |
-|---|---|---|---|---|
-| 1 | El campo nombre no tiene label | Accesibilidad | Campo “Nombre” | Los lectores de pantalla no pueden interpretarlo correctamente |
-| 2 | Botón cancelar junto al enviar | UX | Botones al final | Puede provocar errores al usuario |
-| 3 | Confirmar correo es opcional | Validación | Campo email | Puede causar inconsistencias |
-
-Se recomienda identificar **al menos 10 problemas**.
-
----
-
-# 📸 Evidencia visual
-
-Además del archivo `AUDITORIA.md`, debes agregar **capturas de pantalla** del formulario.
-
-Incluye al menos:
-
-### 1️⃣ Vista en escritorio
-Ventana normal del navegador.
-
-### 2️⃣ Vista en móvil
-Ventana reducida o modo responsive del navegador.
-
-Puedes nombrarlas por ejemplo:
-captura-escritorio.png
-captura-movil.png
-
----
-# 🚫 Regla importante
-
-❌ **No debes modificar el HTML o CSS del formulario.**  
-
-Esta actividad es únicamente de **análisis y auditoría**.
----
-
-# 📦 Entrega
-
-Realiza un **commit en tu repositorio** que incluya:
-
-AUDITORIA.md
-captura-escritorio.png
-captura-movil.png
+#	Problema detectado	Categoría	Evidencia	¿Por qué es un problema?
+1	Falta de meta viewport	Responsive	Línea 7 (comentada)	El formulario no es responsivo y se ve diminuto en dispositivos móviles.
+2	Ausencia de etiquetas (<label>)	Accesibilidad	Inputs generales	Los placeholders desaparecen al escribir; los lectores de pantalla no identifican el campo.
+3	Contraste de texto insuficiente	Accesibilidad	Clase .low-contrast	El texto gris claro sobre blanco no cumple con los estándares mínimos de legibilidad.
+4	Tipos de input inadecuados	Validación	Fecha y Teléfono	Usar type="text" impide el uso de calendarios nativos y teclados numéricos en móviles.
+5	Botones con colores idénticos	UX	Botón Cancelar	El botón de cancelar tiene el mismo color que el de guardar, causando confusión visual.
+6	Instrucciones absurdas	Contenido	Ayuda de contraseña	Pedir "jeroglíficos" es una barrera imposible que impide completar el registro.
+7	Acción destructiva peligrosa	UX	Botón Borrar todo	Su ubicación junto a "Guardar" y su color llamativo invitan a perder todos los datos por error.
+8	Solicitud de datos excesiva	UX	Religión / Estado civil	Pide información privada y sensible que no es necesaria para un registro estándar.
+9	Requisito de extensión irreal	Contenido	Textarea 500 palabras	Obligar a escribir un ensayo para registrarse garantiza que el usuario abandone el sitio.
+10	Falta de feedback de errores	Validación	Nota al pie (.tiny-note)	Indicar que "no se mostrarán detalles" en caso de error deja al usuario bloqueado y sin guía.
+11	Layout desorganizado	Jerarquía Visual	Sección de dirección	Campos amontonados sin estructura de rejilla (grid) que dificultan la lectura rápida.
+12	Lenguaje hostil	Contenido	Banner superior	Amenazar al usuario con rechazar su solicitud sin explicación crea una pésima experiencia emocional.
 
 
-Mensaje de commit sugerido:
-Auditoría UX del formulario: identificación de problemas de diseño
+Evidencia en movil que evidencia el punto 1:
+127.0.0.1_5500_index.html(Samsung Galaxy S20 Ultra).png
 
-
----
-
-# 💡 Consejo
-
-Piensa como un **usuario real** que intenta completar el formulario.
-
-Si algo te confunde, probablemente **también confundirá a otros usuarios**.
+Evidencia en Escritorio: 
+127.0.0.1_5500_index.html.png
